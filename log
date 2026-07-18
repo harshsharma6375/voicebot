@@ -1,135 +1,125 @@
- warnings.warn(
-17:47:57 | INFO     | [Bot] Queuing INSTANT TTS greeting for 95c28461-9a53-4640-a9ae-82ff2020897c: 'Namaskaar! Main Renault Care se bol rahi hoon. Kaise madad kar sakti hoon?'
-17:47:57 | INFO     | [TTS-Interceptor] BOT SYSTEM PROMPT: Namaskaar! Main Renault Care se bol rahi hoon. Kaise madad kar sakti hoon?
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 1
-17:47:57 | INFO     | Pushing data to queue
-17:47:57 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:47:57,337 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:47:57 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784377077.466
-17:48:04 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-17:48:05 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-2026-07-18 17:48:07,471 INFO httpx - HTTP Request: POST https://api-bot.odioiq.com/webhook/logcall "HTTP/1.1 200 "
-17:48:07 | INFO     | [STT-Interceptor] USER (Final): can i know about the features of renault care
-17:48:07 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'can i know about the features of renault care'
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 2
-17:48:07 | INFO     | Pushing data to queue
-17:48:07 | INFO     | Pushing data to ActiveMQ queue
-17:48:07 | INFO     | [BargeIn] Injecting context to stale user input: 'can i know about the features of renault care
+  warnings.warn(
+18:05:30 | INFO     | [Bot] Queuing INSTANT TTS greeting for 4abf5e86-12fe-46f0-90b4-4569ee358d19: 'Namaskaar! Main Renault Care se bol rahi hoon. Kaise madad kar sakti hoon?'
+18:05:31 | INFO     | [TTS-Interceptor] BOT SYSTEM PROMPT: Namaskaar! Main Renault Care se bol rahi hoon. Kaise madad kar sakti hoon?
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 1
+18:05:31 | INFO     | Pushing data to queue
+18:05:31 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:31,102 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:05:31 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784378131.327
+18:05:37 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+18:05:37 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+18:05:39 | INFO     | [STT-Interceptor] USER (Final): can i know about the features of renault care
+18:05:39 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'can i know about the features of renault care'
+18:05:39 | INFO     | [BargeIn] Injecting context to stale user input: 'can i know about the features of renault care
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-2026-07-18 17:48:07,474 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:18 | INFO     | [TTS-Interceptor] BOT SAID: Renault
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 3
-17:48:18 | INFO     | Pushing data to queue
-17:48:18 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:18,405 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:18 | INFO     | [TTS-Interceptor] BOT SAID:  Care ke features ke baare mein jaan-ne ke liye, kya aap kisi
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 4
-17:48:18 | INFO     | Pushing data to queue
-17:48:18 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:18,510 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:18 | INFO     | [TTS-Interceptor] BOT SAID:  specific model jaise Duster ya Kiger ke baare mein pooch rahe hain,
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 5
-17:48:18 | INFO     | Pushing data to queue
-17:48:18 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:18,717 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:18 | INFO     | [TTS-Interceptor] BOT SAID:  ya generally Renault ki services ke baare mein?
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 6
-17:48:18 | INFO     | Pushing data to queue
-17:48:18 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:18,821 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:18 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784377098.945
-17:48:26 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-17:48:26 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-17:48:26 | INFO     | [STT-Interceptor] USER (Final): जी sir
-17:48:26 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'जी sir'
-17:48:26 | INFO     | [BargeIn] Injecting context to stale user input: 'जी sir
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 2
+18:05:39 | INFO     | Pushing data to queue
+18:05:39 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:39,828 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:05:41 | INFO     | [TTS-Interceptor] BOT SAID: Renault
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 3
+18:05:41 | INFO     | Pushing data to queue
+18:05:41 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:41,174 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:05:41 | INFO     | [TTS-Interceptor] BOT SAID:  Care ke features ke baare mein jaan-ne ke liye, kya aap kisi
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 4
+18:05:41 | INFO     | Pushing data to queue
+18:05:41 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:41,272 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+2026-07-18 18:05:41,434 INFO httpx - HTTP Request: POST https://api-bot.odioiq.com/webhook/logcall "HTTP/1.1 200 "
+18:05:41 | INFO     | [TTS-Interceptor] BOT SAID:  specific model jaise Duster ya Kiger ke baare mein pooch rahe hain,
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 5
+18:05:41 | INFO     | Pushing data to queue
+18:05:41 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:41,461 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:05:41 | INFO     | [TTS-Interceptor] BOT SAID:  ya generally Renault ki services ke baare mein?
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 6
+18:05:41 | INFO     | Pushing data to queue
+18:05:41 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:41,554 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:05:41 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784378141.710
+18:05:49 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+18:05:49 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+18:05:49 | INFO     | [STT-Interceptor] USER (Final): ठीक है
+18:05:49 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'ठीक है'
+18:05:49 | INFO     | [BargeIn] Injecting context to stale user input: 'ठीक है
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 7
-17:48:26 | INFO     | Pushing data to queue
-17:48:26 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:26,959 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:27 | INFO     | [TTS-Interceptor] BOT SAID: The
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 8
-17:48:27 | INFO     | Pushing data to queue
-17:48:27 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:27,715 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:27 | INFO     | [TTS-Interceptor] BOT SAID: ek hai. Toh aap Renault Care ki general services ke baare mein jaan-na
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 9
-17:48:27 | INFO     | Pushing data to queue
-17:48:27 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:27,846 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:27 | INFO     | [TTS-Interceptor] BOT SAID:  chahte hain?
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 10
-17:48:27 | INFO     | Pushing data to queue
-17:48:27 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:27,898 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:27 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784377107.962
-17:48:41 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-17:48:41 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-17:48:41 | INFO     | [STT-Interceptor] USER (Final): yes i want to know
-17:48:41 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'yes i want to know'
-17:48:41 | INFO     | [BargeIn] Injecting context to stale user input: 'yes i want to know
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 7
+18:05:49 | INFO     | Pushing data to queue
+18:05:49 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:49,972 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:05:50 | INFO     | [TTS-Interceptor] BOT SAID: The
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 8
+18:05:50 | INFO     | Pushing data to queue
+18:05:50 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:50,843 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:05:50 | INFO     | [TTS-Interceptor] BOT SAID: ek hai. Toh aap Renault Care ki general services ke baare mein jaan-na
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 9
+18:05:50 | INFO     | Pushing data to queue
+18:05:50 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:50,984 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:05:51 | INFO     | [TTS-Interceptor] BOT SAID:  chahte hain?
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 10
+18:05:51 | INFO     | Pushing data to queue
+18:05:51 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:51,033 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:05:51 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784378151.204
+18:05:59 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+18:05:59 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+18:05:59 | INFO     | [STT-Interceptor] USER (Final): renault care
+18:05:59 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'renault care'
+18:05:59 | INFO     | [BargeIn] Injecting context to stale user input: 'renault care
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 11
-17:48:41 | INFO     | Pushing data to queue
-17:48:41 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:41,397 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:42 | INFO     | [TTS-Interceptor] BOT SAID: Renault Care mein hum
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 12
-17:48:42 | INFO     | Pushing data to queue
-17:48:42 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:42,173 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:42 | INFO     | [TTS-Interceptor] BOT SAID:  aapko kayi tarah ki services dete hain. Jaise roadside assistance agar
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 13
-17:48:42 | INFO     | Pushing data to queue
-17:48:42 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:42,305 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:42 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784377122.439
-17:48:42 | INFO     | [TTS-Interceptor] BOT SAID:  aapki gaadi kahin kharaab ho jaati hai, scheduled maintenance
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 14
-17:48:42 | INFO     | Pushing data to queue
-17:48:42 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:42,525 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:42 | INFO     | [TTS-Interceptor] BOT SAID:  services, aur genuine parts ki availability. Iske alawa, aapko hamare authorized service centers par expert technicians milenge. Kya aap kisi khaas service ke
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 15
-17:48:42 | INFO     | Pushing data to queue
-17:48:42 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:42,765 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-17:48:42 | INFO     | [TTS-Interceptor] BOT SAID:  baare mein aur jaan-na chahte hain?
-the seq is key seq:95c28461-9a53-4640-a9ae-82ff2020897c seq 16
-17:48:42 | INFO     | Pushing data to queue
-17:48:42 | INFO     | Pushing data to ActiveMQ queue
-2026-07-18 17:48:42,864 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-2026-07-18 17:48:49,088 INFO server - webhook response is call_id='95c28461-9a53-4640-a9ae-82ff2020897c' status='COMPLETED' cause='16' dial_status='ANSWER'
-2026-07-18 17:48:49,089 INFO server - No data found for key: 95c28461-9a53-4640-a9ae-82ff2020897c_hangup_reason
-2026-07-18 17:48:49,089 INFO server - decreased redis permits count for one call
-2026-07-18 17:48:49,090 INFO server - Key '95c28461-9a53-4640-a9ae-82ff2020897c_extra_keys' deleted successfully.
-2026-07-18 17:48:49,090 INFO server - Key '95c28461-9a53-4640-a9ae-82ff2020897c_extra_data' deleted successfully.
-2026-07-18 17:48:49,090 INFO server - Key '95c28461-9a53-4640-a9ae-82ff2020897c_was_answered' deleted successfully.
-Sending the message this------------------------------------------ {'callSid': '95c28461-9a53-4640-a9ae-82ff2020897c', 'callId': 'call-861e793b-bfb7-438e-9b09-f9e6972a9cf9', 'organisationId': 27, 'departmentId': '', 'campaignId': 37, 'assistantId': '6a3b9f0c6da9b858032c8b7f', 'callStatus': 'COMPLETED', 'reason': 'COMPLETED', 'endedAt': '2026-07-18T12:18:49Z', 'nodes': [], 'workflow_variables': None}
-2026-07-18 17:48:49,090 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.completed
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 11
+18:05:59 | INFO     | Pushing data to queue
+18:05:59 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:05:59,743 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:06:00 | INFO     | [TTS-Interceptor] BOT SAID: Renault
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 12
+18:06:00 | INFO     | Pushing data to queue
+18:06:00 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:06:00,627 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:06:00 | INFO     | [TTS-Interceptor] BOT SAID:  Care mein hum aapko roadside assistance, service appointments book karne ki suvidha
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 13
+18:06:00 | INFO     | Pushing data to queue
+18:06:00 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:06:00,772 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:06:01 | INFO     | [TTS-Interceptor] BOT SAID: , genuine spare parts, aur expert technicians provide karte hain. Iske alawa
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 14
+18:06:01 | INFO     | Pushing data to queue
+18:06:01 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:06:01,019 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+18:06:01 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784378161.144
+18:06:01 | INFO     | [TTS-Interceptor] BOT SAID: , aapko finance options aur insurance support bhi mil jaata hai. Kya aap kisi khaas service ke baare mein aur jaan-na chahte hain?
+the seq is key seq:4abf5e86-12fe-46f0-90b4-4569ee358d19 seq 15
+18:06:01 | INFO     | Pushing data to queue
+18:06:01 | INFO     | Pushing data to ActiveMQ queue
+2026-07-18 18:06:01,263 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+2026-07-18 18:06:08,427 INFO server - webhook response is call_id='4abf5e86-12fe-46f0-90b4-4569ee358d19' status='COMPLETED' cause='16' dial_status='ANSWER'
+2026-07-18 18:06:08,428 INFO server - No data found for key: 4abf5e86-12fe-46f0-90b4-4569ee358d19_hangup_reason
+2026-07-18 18:06:08,428 INFO server - decreased redis permits count for one call
+2026-07-18 18:06:08,428 INFO server - Key '4abf5e86-12fe-46f0-90b4-4569ee358d19_extra_keys' deleted successfully.
+2026-07-18 18:06:08,429 INFO server - Key '4abf5e86-12fe-46f0-90b4-4569ee358d19_extra_data' deleted successfully.
+2026-07-18 18:06:08,429 INFO server - Key '4abf5e86-12fe-46f0-90b4-4569ee358d19_was_answered' deleted successfully.
+Sending the message this------------------------------------------ {'callSid': '4abf5e86-12fe-46f0-90b4-4569ee358d19', 'callId': 'call-861e793b-bfb7-438e-9b09-f9e6972a9cf9', 'organisationId': 27, 'departmentId': '', 'campaignId': 37, 'assistantId': '6a3b9f0c6da9b858032c8b7f', 'callStatus': 'COMPLETED', 'reason': 'COMPLETED', 'endedAt': '2026-07-18T12:36:08Z', 'nodes': [], 'workflow_variables': None}
+2026-07-18 18:06:08,429 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.completed
 sending the event COMPLETED
-INFO:     127.0.0.1:50466 - "POST /webhook/status HTTP/1.1" 200 OK
-17:48:49 | INFO     | [AudioSocket] Connection lost/closed by Asterisk.
-17:48:49 | INFO     | [AudioSocket] Triggering instantaneous pipeline shutdown...
-17:48:49 | INFO     | [Watcher] Asterisk disconnect detected. Initiating shutdown...
-2026-07-18 17:48:49,100 INFO server - webhook response is call_id='95c28461-9a53-4640-a9ae-82ff2020897c' status='COMPLETED' cause='16' dial_status='UNKNOWN'
-2026-07-18 17:48:49,101 INFO server - No data found for key: 95c28461-9a53-4640-a9ae-82ff2020897c_extra_data
-2026-07-18 17:48:49,101 ERROR server - No extra_data found for call_id 95c28461-9a53-4640-a9ae-82ff2020897c
-INFO:     127.0.0.1:50476 - "POST /webhook/status HTTP/1.1" 200 OK
-17:48:49 | INFO     | [Cleanup] Explicitly stopped user and bot transcript logging workers.
-17:48:49 | INFO     | Pipeline finished! Handling Asterisk teardown...
-17:48:49 | INFO     | Normal disconnect. Firing AMI Hangup...
-17:48:50 | WARNING  | [AMI] Could not find active channel for 95c28461-9a53-4640-a9ae-82ff2020897c.
-17:48:50 | INFO     | Pipeline ended for 95c28461-9a53-4640-a9ae-82ff2020897c. Processing audio...
-17:48:50 | INFO     | Temporal stereo recording saved: server_recording_20260718_174757.wav
-17:48:50 | INFO     | Temporal stereo recording reconstructed: server_recording_20260718_174757.wav
-17:48:58 | INFO     | Uploaded server_recording_20260718_174757.wav to S3 bucket odio-bot as phoneAi/27/server_recording_20260718_174757.wav
-17:48:58 | INFO     | Deleted local recording file: server_recording_20260718_174757.wav
-17:48:58 | INFO     | final request to odio bot service with recording: {'callId': 'call-861e793b-bfb7-438e-9b09-f9e6972a9cf9', 'status': 'COMPLETED', 'recordingUrl': 'phoneAi/27/server_recording_20260718_174757.wav', 'isRecording': True}
-sending the event COMPLETED
-2026-07-18 17:49:00,827 INFO httpx - HTTP Request: POST https://api-bot.odioiq.com/webhook/logcall "HTTP/1.1 200 "
-2026-07-18 17:49:00,834 INFO httpx - HTTP Request: POST https://api-bot.odioiq.com/webhook/logcall "HTTP/1.1 200 "
+INFO:     127.0.0.1:57072 - "POST /webhook/status HTTP/1.1" 200 OK
+18:06:08 | INFO     | [AudioSocket] Connection lost/closed by Asterisk.
+18:06:08 | INFO     | [AudioSocket] Triggering instantaneous pipeline shutdown...
+18:06:08 | INFO     | [Watcher] Asterisk disconnect detected. Initiating shutdown...
+2026-07-18 18:06:08,439 INFO server - webhook response is call_id='4abf5e86-12fe-46f0-90b4-4569ee358d19' status='COMPLETED' cause='16' dial_status='UNKNOWN'
+2026-07-18 18:06:08,440 INFO server - No data found for key: 4abf5e86-12fe-46f0-90b4-4569ee358d19_extra_data
+2026-07-18 18:06:08,440 ERROR server - No extra_data found for call_id 4abf5e86-12fe-46f0-90b4-4569ee358d19
+INFO:     127.0.0.1:57082 - "POST /webhook/status HTTP/1.1" 200 OK
+18:06:08 | INFO     | [Cleanup] Explicitly stopped user and bot transcript logging workers.
+18:06:08 | INFO     | Pipeline finished! Handling Asterisk teardown...
+18:06:08 | INFO     | Normal disconnect. Firing AMI Hangup...
+18:06:09 | WARNING  | [AMI] Could not find active channel for 4abf5e86-12fe-46f0-90b4-4569ee358d19.
+18:06:09 | INFO     | Pipeline ended for 4abf5e86-12fe-46f0-90b4-4569ee358d19. Processing audio...
+18:06:09 | INFO     | Temporal stereo recording saved: server_recording_20260718_180530.wav
+18:06:09 | INFO     | Temporal stereo recording reconstructed: server_recording_20260718_180530.wav
+2026-07-18 18:06:19,938 ERROR events.events - Webhook failed after retries for event COMPLETED: 
