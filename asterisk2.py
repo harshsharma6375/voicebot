@@ -167,7 +167,9 @@ SESSION_PIPELINES = {}
 
 BASE_SYSTEM_INSTRUCTION = """
     <ROLE_AND_PERSONA>
-    You are the Renault Care Assistant, a professional, warm, and highly capable conversational voice AI representing Renault Care. Your core responsibility is to handle inbound customer calls, resolve technical and product inquiries comprehensively using the provided knowledge base, or route the call seamlessly to the correct department.
+    You are the Renault Care Assistant, a senior customer support representative with years of experience handling Renault owners and buyers in India. You have heard every kind of call: breakdowns on highways, E M I confusion, first-time buyers comparing models, and frustrated customers who have already been transferred twice.
+
+    You carry that experience into every call. You listen before you act, recognise what the customer actually needs even when they explain it poorly, and stay calm and reassuring when they are stressed. You are confident about what you know, honest about what you do not, and you never make a customer repeat themselves. You guide the conversation without rushing it, and you adapt your depth and pace to the person on the line.
     </ROLE_AND_PERSONA>
 
     <VOICE_CHANNEL_CONSTRAINTS>
@@ -214,7 +216,19 @@ BASE_SYSTEM_INSTRUCTION = """
     - CONVERSATION IN-PROGRESS (HISTORY EXISTS): If there is at least one assistant message in the history, you are FORBIDDEN from repeating the greeting or any variation of it.  
     Immediately address the customer's active query in the correct language.
     </GREETING_RULE>
-"""
+
+    <NUMBER_AND_ACRONYM_PRONUNCIATION>
+    Every numeric value you speak must be written the way it should be heard, in the language state that is active for this turn. This applies to all numbers without exception: phone numbers, V I N s, O T P s, registration numbers, Loan I D s, mileage, prices, dimensions, measurements, engine specifications, percentages, dates, and currency.
+
+    - Identifiers read digit by digit (phone numbers, V I N s, O T P s, registration numbers, Loan I D s):
+      - English: insert a space between every single digit (e.g., "9 8 1 1 6 6 3 9 5 9").
+      - Hinglish: write the digits as Hindi words (e.g., "9811" becomes "nau aath ek ek").
+    - Quantities read naturally (measurements, prices, percentages, engine figures, dates):
+      - English: "205 mm" becomes "two hundred and five millimetres", "8.5 lakhs" becomes "eight point five lakhs", "25.65 cm" becomes "twenty-five point six-five centimetres".
+      - Hinglish: speak the same values in natural Hindi number words while keeping the sentence conversational (e.g., "205 millimetre", "chhah airbags", "pachees point painsath centimeter").
+    - Acronyms: write them with spaces between letters so they are spelled out (e.g., "E M I", "V I N", "S U V", "C V T", "I D"). Do not chain several acronyms together into an unreadable run of letters; if a term sounds awkward spelled out, say it as a word instead.
+    </NUMBER_AND_ACRONYM_PRONUNCIATION>
+    """
 
 async def prewarm_pipeline(call_id, stt_config, tts_config, assistant_config):
 
@@ -1672,7 +1686,7 @@ async def handle_asterisk_stream(
     #     if voice.get("provider").lower() == "cartesia":
     #         voice_id = voice.get("voiceId")
     #     else:
-    #         language = voice.get("language", "")
+    #         language = voice.get("language", "")updated
     #         voice_id = get_voice_code(language.replace("_", "-"))
 
     #     tts = CartesiaTTSService(
@@ -1704,7 +1718,12 @@ async def handle_asterisk_stream(
 
     ist_tz = zoneinfo.ZoneInfo('Asia/Kolkata')
     current_time = datetime.now(ist_tz).strftime("%A, %d %B %Y, %I:%M %p")
-    
+                                                                                                                                                                                               
+                                                                                ## --------------------------------updated tools starting part ----------------------------------------
+   #------------------------------------------------------------------
+
+    # KNOWLEDGE DATA
+    # ------------------------------------------------------------------
     DUSTER_BROCHURE = """
     RENAULT DUSTER — key specs for spoken use:
     Engines: 1.3 litre Turbo Petrol (156 PS, 254 Nm) with 6-speed manual or X-Tronic CVT;
@@ -1729,7 +1748,42 @@ async def handle_asterisk_stream(
     Design: dual-tone exterior options, LED projector headlamps, up to 16 inch diamond-cut alloy wheels.
     """
 
-    def _build_product_prompt(model: str) -> str:
+    DEALER_DIRECTORY = {
+        "delhi": [
+            {"name": "Renault Okhla Service", "address": "A-188, Okhla Industrial Estate Phase-1", "phone": "8588845587"},
+            {"name": "Renault Delhi North Service", "address": "C-56, Wazirpur Industrial Area", "phone": "9811663959"},
+            {"name": "Renault Mayapuri Service", "address": "B-69, Mayapuri Industrial Area Phase-1", "phone": "9599883149"},
+        ],
+        "gurgaon": [
+            {"name": "Renault Atul Kataria Chowk", "address": "Old Delhi Gurgaon Road", "phone": "8527590084"},
+            {"name": "Renault Gurugram Golf Course Extn", "address": "Sector 61", "phone": "7669172932"},
+        ],
+        "noida": [
+            {"name": "Renault Noida", "address": "A-79, Sector-2", "phone": "7065002714"},
+            {"name": "Renault Noida Sector 63", "address": "H-12, Sector 63", "phone": "7065002752"},
+        ],
+        "ghaziabad": [
+            {"name": "Renault Ghaziabad City", "address": "Ghaziabad", "phone": "9319391836"},
+        ],
+        "faridabad": [
+            {"name": "Renault Faridabad City Service", "address": "Faridabad", "phone": "7419757585"},
+        ],
+    }
+
+    # Aliases so spoken variants resolve to the same city key
+    _CITY_ALIASES = {
+        "gurugram": "gurgaon",
+        "new delhi": "delhi",
+        "ncr": "delhi",
+    }
+
+    # ------------------------------------------------------------------
+    # WORKER HANDLERS
+    # ------------------------------------------------------------------
+    async def handle_enter_product_expert(function_name, tool_session_id, args, llm, context, result_callback):
+        model = (args or {}).get("model", "unspecified")
+        logger.info(f"[ProductExpert] Loading brochure for model={model}")
+
         if model == "duster":
             brochure = DUSTER_BROCHURE
         elif model == "kiger":
@@ -1737,88 +1791,303 @@ async def handle_asterisk_stream(
         else:
             brochure = DUSTER_BROCHURE + "\n" + KIGER_BROCHURE
 
-        return BASE_SYSTEM_INSTRUCTION + f"""
-        You are now operating as the Renault Product Consultant. You have direct access to the vehicle brochures.
-        DIRECTIVE: When answering features, engine options, or specs, provide rich, descriptive, and comprehensive
-        explanations utilizing the technical metrics from the brochures below. Speak in fluid, natural paragraphs.
-        Do not read the data as a list — weave it into natural spoken sentences.
-
-        [BROCHURE DATA]:
-        {brochure}
-        """
-        
-    async def handle_enter_product_expert(function_name, tool_session_id, args, llm, context, result_callback):
-        model = (args or {}).get("model", "unspecified")
-        logger.info(f"[ProductExpert] Entering product expert mode for model={model}")
-        context.messages[0]["content"] = _build_product_prompt(model)
-        await result_callback({"status": "product_expert_mode_active", "model": model})
+        await result_callback({
+            "status": "brochure_loaded",
+            "model": model,
+            "brochure_data": brochure,
+            "directive": (
+                "Answer using only these figures, woven into natural spoken sentences. "
+                "If a detail is not here, say you do not have it. Never invent a figure."
+            ),
+        })
 
     async def handle_exit_product_expert(function_name, tool_session_id, args, llm, context, result_callback):
         logger.info("[ProductExpert] Exiting product expert mode")
-        context.messages[0]["content"] = BASE_SYSTEM_INSTRUCTION
         await result_callback({"status": "base_mode_restored"})
+
+    async def handle_roadside_assistance(function_name, tool_session_id, args, llm, context, result_callback):
+        args = args or {}
+        customer_name = args.get("customer_name")
+        registration_number = args.get("registration_number")
+        issue_description = args.get("issue_description")
+        logger.info(
+            f"[Roadside] name={customer_name} reg={registration_number} issue={issue_description}"
+        )
+
+        missing = [
+            field for field, value in (
+                ("customer_name", customer_name),
+                ("registration_number", registration_number),
+                ("issue_description", issue_description),
+            ) if not value
+        ]
+
+        if missing:
+            await result_callback({
+                "status": "details_incomplete",
+                "missing_fields": missing,
+                "directive": "Ask the customer only for the missing fields, one at a time, then call this tool again.",
+            })
+            return
+
+        await result_callback({
+            "status": "case_logged",
+            "customer_name": customer_name,
+            "registration_number": registration_number,
+            "issue_description": issue_description,
+            "next_action": "transfer_to_agent",
+            "directive": (
+                "Tell the customer you are connecting them to the Emergency Breakdown Team, "
+                "then call transfer_to_agent."
+            ),
+        })
+
+    async def handle_finance_support(function_name, tool_session_id, args, llm, context, result_callback):
+        args = args or {}
+        query_type = args.get("query_type")
+        reference_id = args.get("reference_id")
+        logger.info(f"[Finance] type={query_type} ref={reference_id}")
+
+        missing = [
+            field for field, value in (
+                ("query_type", query_type),
+                ("reference_id", reference_id),
+            ) if not value
+        ]
+
+        if missing:
+            await result_callback({
+                "status": "details_incomplete",
+                "missing_fields": missing,
+                "directive": "Ask the customer only for the missing fields, then call this tool again.",
+            })
+            return
+
+        await result_callback({
+            "status": "case_logged",
+            "query_type": query_type,
+            "reference_id": reference_id,
+            "next_action": "transfer_to_agent",
+            "directive": (
+                "Tell the customer you are connecting them to the Finance and Car Loan specialists, "
+                "then call transfer_to_agent. Do not state any figure, rate or due date yourself."
+            ),
+        })
+
+    async def handle_radio_code(function_name, tool_session_id, args, llm, context, result_callback):
+        args = args or {}
+        vin = (args.get("vin") or "").strip()
+        logger.info(f"[RadioCode] vin={vin}")
+
+        if not vin:
+            await result_callback({
+                "status": "vin_required",
+                "directive": (
+                    "Ask the customer to read out the seventeen digit V I N from their "
+                    "registration papers or dashboard, then call this tool again."
+                ),
+            })
+            return
+
+        cleaned = vin.replace(" ", "").replace("-", "")
+        if len(cleaned) != 17:
+            await result_callback({
+                "status": "vin_invalid",
+                "received_length": len(cleaned),
+                "directive": (
+                    "Tell the customer the V I N should be seventeen characters and ask them "
+                    "to read it out once more, then call this tool again."
+                ),
+            })
+            return
+
+        await result_callback({
+            "status": "vin_received",
+            "vin": cleaned,
+            "directive": (
+                "Confirm you have noted the V I N and that the radio code will be shared shortly, "
+                "then move to closing the call."
+            ),
+        })
+
+    async def handle_dealer_lookup(function_name, tool_session_id, args, llm, context, result_callback):
+        args = args or {}
+        city_raw = (args.get("city") or "").strip().lower()
+        logger.info(f"[Dealer] city={city_raw}")
+
+        if not city_raw:
+            await result_callback({
+                "status": "city_required",
+                "directive": "Ask the customer which city or area they are in, then call this tool again.",
+            })
+            return
+
+        city_key = _CITY_ALIASES.get(city_raw, city_raw)
+        if city_key not in DEALER_DIRECTORY:
+            city_key = next(
+                (key for key in DEALER_DIRECTORY if key in city_raw or city_raw in key),
+                None,
+            )
+
+        if not city_key:
+            await result_callback({
+                "status": "no_dealer_found",
+                "requested_city": city_raw,
+                "available_cities": list(DEALER_DIRECTORY.keys()),
+                "directive": (
+                    "Tell the customer there is no service centre listed in that location and "
+                    "offer the nearest available city from the list."
+                ),
+            })
+            return
+
+        centres = DEALER_DIRECTORY[city_key]
+        await result_callback({
+            "status": "dealers_found",
+            "city": city_key,
+            "count": len(centres),
+            "centres": centres,
+            "directive": (
+                "If there is more than one centre, describe the locations and ask which they prefer "
+                "before reading a number. Read the phone number using the number rules for your "
+                "current language state."
+            ),
+        })
 
     llm.register_function("enter_product_expert_mode", handle_enter_product_expert)
     llm.register_function("exit_product_expert_mode", handle_exit_product_expert)
-        
+    llm.register_function("roadside_assistance", handle_roadside_assistance)
+    llm.register_function("finance_support", handle_finance_support)
+    llm.register_function("radio_code_retrieval", handle_radio_code)
+    llm.register_function("dealer_lookup", handle_dealer_lookup)
+
+    # ------------------------------------------------------------------
+    # TOOL SCHEMAS
+    # ------------------------------------------------------------------
     from pipecat.adapters.schemas.function_schema import FunctionSchema
 
     ENTER_PRODUCT_EXPERT_TOOL = FunctionSchema(
         name="enter_product_expert_mode",
         description=(
-            "CALL THIS IMMEDIATELY when the user asks about vehicle specs, features, "
-            "engine options, dimensions, safety, interior, or comparisons for the "
-            "Renault Duster or Renault Kiger. "
-            "Do NOT attempt to answer from memory first — call this function BEFORE "
-            "generating any spoken product content, so you have brochure data loaded. "
-            "Trigger phrases: 'engine', 'mileage', 'features', 'boot space', 'safety rating', "
-            "'Duster', 'Kiger', 'variant', 'price', 'specifications'."
+            "CALL THIS IMMEDIATELY when the customer asks about vehicle specs, features, "
+            "engine options, transmissions, power, torque, mileage, dimensions, ground clearance, "
+            "boot space, safety, airbags, interior, infotainment, design, wheels, variants, price, "
+            "or a comparison between the Renault Duster and Renault Kiger. "
+            "Do NOT attempt to answer from memory first — call this function BEFORE generating any "
+            "spoken product content, so you have brochure data loaded."
         ),
         properties={
             "model": {
                 "type": "string",
                 "enum": ["duster", "kiger", "unspecified"],
-                "description": "Which model the user is asking about, if identifiable from their utterance."
+                "description": "Which model the customer is asking about, if identifiable from their utterance.",
             }
         },
-        required=["model"]
+        required=["model"],
     )
 
     EXIT_PRODUCT_EXPERT_TOOL = FunctionSchema(
         name="exit_product_expert_mode",
         description=(
-            "CALL THIS when the user's query moves away from vehicle specs/features "
-            "back to routing needs (roadside, finance, dealer lookup, radio code) or "
-            "when they want to end the call. Restores the base routing system prompt."
+            "CALL THIS when the customer's query moves away from vehicle specs or features "
+            "back to roadside assistance, finance, dealer lookup, radio code, or ending the call."
         ),
         properties={},
-        required=[]
+        required=[],
     )
-    
+
+    ROADSIDE_ASSISTANCE_TOOL = FunctionSchema(
+        name="roadside_assistance",
+        description=(
+            "CALL THIS when the customer's vehicle has broken down, will not start, has a puncture, "
+            "an accident, overheating, or they are stranded and need help now. "
+            "Collect their name, vehicle registration number, and what went wrong, then call this tool. "
+            "If you do not have all three yet, call it anyway with what you have and it will tell you what is missing."
+        ),
+        properties={
+            "customer_name": {
+                "type": "string",
+                "description": "The customer's full name.",
+            },
+            "registration_number": {
+                "type": "string",
+                "description": "The vehicle registration number, exactly as the customer said it.",
+            },
+            "issue_description": {
+                "type": "string",
+                "description": "What went wrong with the vehicle, in the customer's own words.",
+            },
+        },
+        required=[],
+    )
+
+    FINANCE_SUPPORT_TOOL = FunctionSchema(
+        name="finance_support",
+        description=(
+            "CALL THIS when the customer asks about a car loan, an ongoing E M I, instalments, "
+            "interest, foreclosure, or loan documents. Clarify whether it is a new loan or a running "
+            "E M I, and take their Loan I D or registration number, then call this tool."
+        ),
+        properties={
+            "query_type": {
+                "type": "string",
+                "enum": ["new_loan", "existing_emi"],
+                "description": "Whether the query concerns a new car loan or an active ongoing E M I.",
+            },
+            "reference_id": {
+                "type": "string",
+                "description": "The customer's Loan I D or vehicle registration number.",
+            },
+        },
+        required=[],
+    )
+
+    RADIO_CODE_TOOL = FunctionSchema(
+        name="radio_code_retrieval",
+        description=(
+            "CALL THIS when the customer's music system, radio, or infotainment is locked and asking "
+            "for a code. Ask them to read out the seventeen digit V I N from their registration papers "
+            "or dashboard, then call this tool with it."
+        ),
+        properties={
+            "vin": {
+                "type": "string",
+                "description": "The seventeen character Vehicle Identification Number as the customer read it out.",
+            }
+        },
+        required=[],
+    )
+
+    DEALER_LOOKUP_TOOL = FunctionSchema(
+        name="dealer_lookup",
+        description=(
+            "CALL THIS when the customer wants a service centre, workshop, showroom, dealership "
+            "address, or a contact number for a location. Ask for their city or area first, then "
+            "call this tool with it. Do not recite any dealership name or phone number from memory."
+        ),
+        properties={
+            "city": {
+                "type": "string",
+                "description": "The city or area the customer named, e.g. Delhi, Gurgaon, Noida, Ghaziabad, Faridabad.",
+            }
+        },
+        required=[],
+    )
+
     tools = ToolsSchema(standard_tools=[
         END_CONVERSATION_TOOL,
         TRANSFER_AGENT_TOOL,
         ENTER_PRODUCT_EXPERT_TOOL,
         EXIT_PRODUCT_EXPERT_TOOL,
-    ])
-    
-    
-    # # Append this to whatever your current system prompt is
-    # dynamic_system_prompt = system_prompt + f"""
-    # \n\n---
-    # [CRITICAL SYSTEM CONTEXT]
-    # The current date and time right now is: {current_time} (IST).
-    # """
-
-    # messages = [{"role": "system", "content": dynamic_system_prompt}]
-        
-    context = LLMContext(
-        tools=tools
-    )
-    
-    # We create the aggregator pair directly, bypassing the GoogleLLMService helper
+        ROADSIDE_ASSISTANCE_TOOL,
+        FINANCE_SUPPORT_TOOL,
+        RADIO_CODE_TOOL,
+        DEALER_LOOKUP_TOOL,])
+    context = LLMContext(tools=tools)
     context_aggregator = LLMContextAggregatorPair(context=context)
 
+    ###-----------------------------updated tools part ended here ---------------------------------------------------
+    # We create the aggregator pair directly, bypassing the GoogleLLMService helper
     # ------------------------------------------------------------------
     # STT Mute Strategy
     #
