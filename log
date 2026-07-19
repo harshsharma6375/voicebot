@@ -1,377 +1,457 @@
-  warnings.warn(
-19:40:44 | INFO     | [Bot] Queuing INSTANT TTS greeting for 93051a2e-b80d-4e4a-96f8-379e9128409b: 'Namaskaar! Main Renault Care se bol rahi hoon. Kaise madad kar sakti hoon?'
-19:40:44 | INFO     | [TTS-Interceptor] BOT SYSTEM PROMPT: Namaskaar! Main Renault Care se bol rahi hoon. Kaise madad kar sakti hoon?
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 1
-19:40:44 | INFO     | Pushing data to queue
-19:40:44 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:40:44,942 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:40:45 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784470245.061
-2026-07-19 19:40:45,710 INFO httpx - HTTP Request: POST https://api-bot.odioiq.com/webhook/logcall "HTTP/1.1 200 "
-19:40:52 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:40:52 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:40:53 | INFO     | [STT-Interceptor] USER (Final): i want to know about the renewal cards
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 2
-19:40:53 | INFO     | Pushing data to queue
-19:40:53 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:40:53,154 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:40:53 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'i want to know about the renewal cards'
-19:40:53 | INFO     | [BargeIn] Injecting context to stale user input: 'i want to know about the renewal cards
+ warnings.warn(
+20:04:00 | INFO     | [Bot] Queuing INSTANT TTS greeting for 34110931-3513-4e32-b70f-7b38e7fe9e70: 'Namaskaar! Main Renault Care se bol rahi hoon. Kaise madad kar sakti hoon?'
+20:04:00 | INFO     | [TTS-Interceptor] BOT SYSTEM PROMPT: Namaskaar! Main Renault Care se bol rahi hoon. Kaise madad kar sakti hoon?
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 1
+20:04:00 | INFO     | Pushing data to queue
+20:04:00 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:00,835 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:00 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471640.953
+2026-07-19 20:04:01,629 INFO httpx - HTTP Request: POST https://api-bot.odioiq.com/webhook/logcall "HTTP/1.1 200 "
+Cleaning unused pipeline a83373dd-f467-420d-991f-01358f051c49
+Destroyed pipeline a83373dd-f467-420d-991f-01358f051c49
+20:04:07 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:04:07 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:04:09 | INFO     | [STT-Interceptor] USER (Final): i want to know about the car
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 2
+20:04:09 | INFO     | Pushing data to queue
+20:04:09 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:09,512 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:09 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'i want to know about the car'
+20:04:09 | INFO     | [BargeIn] Injecting context to stale user input: 'i want to know about the car
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:40:54 | INFO     | [TTS-Interceptor] BOT SAID: I
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 3
-19:40:54 | INFO     | Pushing data to queue
-19:40:54 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:40:54,620 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:40:54 | INFO     | [TTS-Interceptor] BOT SAID:  am sorry, I do not have information about renewal cards. Can I help you with
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 4
-19:40:54 | INFO     | Pushing data to queue
-19:40:54 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:40:54,678 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:40:54 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784470254.791
-19:40:54 | INFO     | [TTS-Interceptor] BOT SAID:  something else, perhaps related to roadside assistance, finance, or vehicle information?
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 5
-19:40:54 | INFO     | Pushing data to queue
-19:40:54 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:40:54,920 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:10 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:41:10 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:41:11 | INFO     | [STT-Interceptor] USER (Final): i want to know about the renault car
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 6
-19:41:11 | INFO     | Pushing data to queue
-19:41:11 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:11,524 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:11 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'i want to know about the renault car'
-19:41:11 | INFO     | [BargeIn] Injecting context to stale user input: 'i want to know about the renault car
+20:04:10 | INFO     | [STT-Interceptor] USER (Final): you have
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 3
+20:04:10 | INFO     | Pushing data to queue
+20:04:10 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:10,070 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:10 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'you have'
+20:04:10 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:04:10 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:04:11 | INFO     | [TTS-Interceptor] BOT SAID: Which
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 4
+20:04:11 | INFO     | Pushing data to queue
+20:04:11 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:11,565 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:11 | INFO     | [TTS-Interceptor] BOT SAID:  car model would you like to know about?
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 5
+20:04:11 | INFO     | Pushing data to queue
+20:04:11 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:11,599 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:11 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471651.716
+20:04:17 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:04:17 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:04:18 | INFO     | [STT-Interceptor] USER (Final): want to know about renault duster
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 6
+20:04:18 | INFO     | Pushing data to queue
+20:04:18 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:18,679 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:19 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'want to know about renault duster'
+20:04:19 | INFO     | [BargeIn] Injecting context to stale user input: 'want to know about renault duster
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:41:13 | INFO     | [ProductExpert] Loading brochure for model=unspecified
-19:41:13 | INFO     | [TTS-Interceptor] BOT SAID: Certainly
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 7
-19:41:13 | INFO     | Pushing data to queue
-19:41:13 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:13,929 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:14 | INFO     | [TTS-Interceptor] BOT SAID: , I can help you with information about Renault cars. Are you interested in a
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 8
-19:41:14 | INFO     | Pushing data to queue
-19:41:14 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:14,039 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:14 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784470274.159
-19:41:14 | INFO     | [TTS-Interceptor] BOT SAID:  specific model like the Duster or the Kiger, or would you like to know about something
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 9
-19:41:14 | INFO     | Pushing data to queue
-19:41:14 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:14,215 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:14 | INFO     | [TTS-Interceptor] BOT SAID:  in general, such as features, engine options, or safety?
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 10
-19:41:14 | INFO     | Pushing data to queue
-19:41:14 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:14,443 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:32 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:41:32 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:41:33 | INFO     | [STT-Interceptor] USER (Final): मुझे दोनों cars का engine
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 11
-19:41:33 | INFO     | Pushing data to queue
-19:41:33 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:33,889 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:34 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'मुझे दोनों cars का engine'
-19:41:34 | INFO     | [BargeIn] Injecting context to stale user input: 'मुझे दोनों cars का engine
+20:04:20 | INFO     | [ProductExpert] Loading brochure for model=duster
+20:04:20 | INFO     | [TTS-Interceptor] BOT SAID: The Renault Duster comes
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 7
+20:04:20 | INFO     | Pushing data to queue
+20:04:20 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:20,744 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:20 | INFO     | [TTS-Interceptor] BOT SAID:  with a one point three litre Turbo Petrol engine that delivers one hundred and fifty six P S of
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 8
+20:04:20 | INFO     | Pushing data to queue
+20:04:20 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:20,893 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:20 | INFO     | [TTS-Interceptor] BOT SAID:  power and two hundred and fifty four Newton metres of torque. It's available with either
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 9
+20:04:20 | INFO     | Pushing data to queue
+20:04:20 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:20,992 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:21 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471661.113
+20:04:21 | INFO     | [TTS-Interceptor] BOT SAID:  a six speed manual or an X-Tronic C V T transmission.
+
+Would you like to know about its safety features, interior, or perhaps another aspect
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 10
+20:04:21 | INFO     | Pushing data to queue
+20:04:21 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:21,144 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:21 | INFO     | [TTS-Interceptor] BOT SAID: ?
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 11
+20:04:21 | INFO     | Pushing data to queue
+20:04:21 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:21,178 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:32 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:04:32 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:04:33 | INFO     | [STT-Interceptor] USER (Final): kiger के बारे में बता सकती हो
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 12
+20:04:33 | INFO     | Pushing data to queue
+20:04:33 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:33,411 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:33 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'kiger के बारे में बता सकती हो'
+20:04:33 | INFO     | [BargeIn] Injecting context to stale user input: 'kiger के बारे में बता सकती हो
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:41:34 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:41:34 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:41:34 | INFO     | [STT-Interceptor] USER (Final): difference होता है वह
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 12
-19:41:34 | INFO     | Pushing data to queue
-19:41:34 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:34,973 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:35 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'difference होता है वह'
-19:41:35 | INFO     | [BargeIn] Injecting context to stale user input: 'difference होता है वह
+20:04:35 | INFO     | [ProductExpert] Loading brochure for model=kiger
+20:04:35 | INFO     | [TTS-Interceptor] BOT SAID: Ji
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 13
+20:04:35 | INFO     | Pushing data to queue
+20:04:35 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:35,890 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:35 | INFO     | [TTS-Interceptor] BOT SAID: , Renault Kiger mein aapko ek point zero litre naturally aspirated petrol engine milta hai
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 14
+20:04:35 | INFO     | Pushing data to queue
+20:04:35 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:35,967 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:36 | INFO     | [TTS-Interceptor] BOT SAID:  jo bahattar P S power deta hai, aur ek point zero litre turbo petrol
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 15
+20:04:36 | INFO     | Pushing data to queue
+20:04:36 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:36,138 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:36 | INFO     | [TTS-Interceptor] BOT SAID:  engine bhi hai jo sau P S power aur ek sau saath Newton metre torque deta hai. Ismein manual, A M T, aur C V T transmission ke
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 16
+20:04:36 | INFO     | Pushing data to queue
+20:04:36 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:36,352 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:36 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471676.468
+20:04:36 | INFO     | [TTS-Interceptor] BOT SAID:  options hain. Aap iske safety features, interior, ya design ke baare mein jaanna chahengi?
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 17
+20:04:36 | INFO     | Pushing data to queue
+20:04:36 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:36,534 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:57 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:04:57 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:04:57 | INFO     | [STT-Interceptor] USER (Final): i want to know about what is
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 18
+20:04:57 | INFO     | Pushing data to queue
+20:04:57 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:57,832 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:58 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'i want to know about what is'
+20:04:58 | INFO     | [BargeIn] Injecting context to stale user input: 'i want to know about what is
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:41:36 | INFO     | [TTS-Interceptor] BOT SAID: Duster mein
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 13
-19:41:36 | INFO     | Pushing data to queue
-19:41:36 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:36,390 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:36 | INFO     | [TTS-Interceptor] BOT SAID:  aapko ek point teen litre ka turbo petrol engine milta hai jo ek sau chhappan P
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 14
-19:41:36 | INFO     | Pushing data to queue
-19:41:36 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:36,544 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:36 | INFO     | [TTS-Interceptor] BOT SAID:  S power aur do sau chauvan Newton metre torque deta hai. Ismein ch
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 15
-19:41:36 | INFO     | Pushing data to queue
-19:41:36 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:36,752 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:36 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784470296.871
-19:41:37 | INFO     | [TTS-Interceptor] BOT SAID: hah speed manual ya X-Tronic C V T ka option hai. Iske alava ek point paanch litre ka diesel engine bhi hai jo ek sau pand
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 16
-19:41:37 | INFO     | Pushing data to queue
-19:41:37 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:37,135 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:37 | INFO     | [TTS-Interceptor] BOT SAID: rah P S power aur do sau saath Newton metre torque deta hai, ismein chhah speed manual gearbox hai.
-
-Kiger mein ek point zero litre ka naturally aspirated petrol engine
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 17
-19:41:37 | INFO     | Pushing data to queue
-19:41:37 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:37,463 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:37 | INFO     | [TTS-Interceptor] BOT SAID:  hai jo bahattar P S power deta hai, ismein manual ya A M T ka option hai. Aur ek point zero litre ka turbo petrol engine bhi hai jo sau P S power aur ek sau saath Newton metre torque deta hai,
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 18
-19:41:37 | INFO     | Pushing data to queue
-19:41:37 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:37,829 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:38 | INFO     | [TTS-Interceptor] BOT SAID:  ismein manual ya C V T ka option hai.
-
-Aap aur kis cheez ke baare mein jaanna chahenge, jaise ki safety features ya interior?
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 19
-19:41:38 | INFO     | Pushing data to queue
-19:41:38 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:38,175 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:56 | INFO     | [STT-Interceptor] USER (Final): hello
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 20
-19:41:56 | INFO     | Pushing data to queue
-19:41:56 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:56,339 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:56 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'hello'
-19:41:56 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:41:56 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:41:57 | INFO     | [TTS-Interceptor] BOT SAID: Hello
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 21
-19:41:57 | INFO     | Pushing data to queue
-19:41:57 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:57,795 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:58 | INFO     | [TTS-Interceptor] BOT SAID: , main aapki kis prakar sahayata kar sakti hoon?
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 22
-19:41:58 | INFO     | Pushing data to queue
-19:41:58 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:41:58,006 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:41:58 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784470318.124
-19:42:04 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:42:04 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:42:06 | INFO     | [STT-Interceptor] USER (Final): can you explain me what is vin number and how
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 23
-19:42:06 | INFO     | Pushing data to queue
-19:42:06 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:06,655 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:07 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'can you explain me what is vin number and how'
-19:42:07 | INFO     | [BargeIn] Injecting context to stale user input: 'can you explain me what is vin number and how
+20:04:58 | INFO     | [STT-Interceptor] USER (Final): the
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 19
+20:04:58 | INFO     | Pushing data to queue
+20:04:58 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:58,518 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:58 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'the'
+20:04:58 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:04:58 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:04:59 | INFO     | [STT-Interceptor] USER (Final): ready for
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 20
+20:04:59 | INFO     | Pushing data to queue
+20:04:59 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:04:59,401 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:04:59 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'ready for'
+20:04:59 | INFO     | [BargeIn] Injecting context to stale user input: 'ready for
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:42:07 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:42:07 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:42:07 | INFO     | [STT-Interceptor] USER (Final): can i use this
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 24
-19:42:07 | INFO     | Pushing data to queue
-19:42:07 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:07,775 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:08 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'can i use this'
-19:42:08 | INFO     | [BargeIn] Injecting context to stale user input: 'can i use this
+20:04:59 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:04:59 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:05:00 | INFO     | [TTS-Interceptor] BOT SAID: I am
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 21
+20:05:00 | INFO     | Pushing data to queue
+20:05:00 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:00,859 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:00 | INFO     | [TTS-Interceptor] BOT SAID:  sorry, I did not catch that. Could you please repeat what you would like to know?
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 22
+20:05:00 | INFO     | Pushing data to queue
+20:05:00 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:00,955 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:01 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471701.082
+20:05:09 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:05:09 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:05:10 | INFO     | [STT-Interceptor] USER (Final): i want to know about what is radio code
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 23
+20:05:10 | INFO     | Pushing data to queue
+20:05:10 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:10,774 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:11 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'i want to know about what is radio code'
+20:05:11 | INFO     | [BargeIn] Injecting context to stale user input: 'i want to know about what is radio code
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:42:09 | INFO     | [TTS-Interceptor] BOT SAID: A
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 25
-19:42:09 | INFO     | Pushing data to queue
-19:42:09 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:09,188 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:09 | INFO     | [TTS-Interceptor] BOT SAID:  V I N Number, yaani Vehicle Identification Number, ek unique seventeen digit ka alphanumeric number hota
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 26
-19:42:09 | INFO     | Pushing data to queue
-19:42:09 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:09,303 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:09 | INFO     | [TTS-Interceptor] BOT SAID:  hai. Yeh aapko aapki gaadi ke left top engine compartment par ya phir aap
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 27
-19:42:09 | INFO     | Pushing data to queue
-19:42:09 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:09,464 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:09 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784470329.583
-19:42:09 | INFO     | [TTS-Interceptor] BOT SAID: ke R C card par mil jayega. Iska upyog gaadi ki pehchaan ke liye hota hai, jaise ki radio code nikalne ke liye.
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 28
-19:42:09 | INFO     | Pushing data to queue
-19:42:09 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:09,824 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:27 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:42:27 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:42:29 | INFO     | [STT-Interceptor] USER (Final): can you give me one example of this
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 29
-19:42:29 | INFO     | Pushing data to queue
-19:42:29 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:29,452 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:29 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'can you give me one example of this'
-19:42:29 | INFO     | [BargeIn] Injecting context to stale user input: 'can you give me one example of this
+20:05:12 | INFO     | [RadioCode] vin=
+20:05:12 | INFO     | [TTS-Interceptor] BOT SAID: Thank you. To get your
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 24
+20:05:12 | INFO     | Pushing data to queue
+20:05:12 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:12,796 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:12 | INFO     | [TTS-Interceptor] BOT SAID:  Radio Authentication Code, I will need your seventeen digit V I N. You can find this
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 25
+20:05:12 | INFO     | Pushing data to queue
+20:05:12 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:12,857 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:12 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471712.914
+20:05:12 | INFO     | [TTS-Interceptor] BOT SAID:  on the left top of the engine compartment or on your R C card. Please read it
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 26
+20:05:12 | INFO     | Pushing data to queue
+20:05:12 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:12,990 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:13 | INFO     | [TTS-Interceptor] BOT SAID:  out for me.
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 27
+20:05:13 | INFO     | Pushing data to queue
+20:05:13 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:13,094 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:30 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:05:30 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:05:32 | INFO     | [STT-Interceptor] USER (Final): ok so now
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 28
+20:05:32 | INFO     | Pushing data to queue
+20:05:32 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:32,389 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:32 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'ok so now'
+20:05:32 | INFO     | [BargeIn] Injecting context to stale user input: 'ok so now
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:42:30 | INFO     | [TTS-Interceptor] BOT SAID: Main
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 30
-19:42:30 | INFO     | Pushing data to queue
-19:42:30 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:30,860 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:33 | INFO     | [TTS-Interceptor] BOT SAID:  aapko V I N ka koi example nahi de sakti, lekin yeh seventeen
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 31
-19:42:33 | INFO     | Pushing data to queue
-19:42:33 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:33,004 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:33 | INFO     | [TTS-Interceptor] BOT SAID:  aksharon aur sankhyaon ka ek mishran hota hai. Kya aapko is
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 32
-19:42:33 | INFO     | Pushing data to queue
-19:42:33 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:33,306 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:33 | INFO     | [TTS-Interceptor] BOT SAID: ke baare mein aur kuch jaanna hai?
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 33
-19:42:33 | INFO     | Pushing data to queue
-19:42:33 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:33,417 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:33 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784470353.423
-19:42:44 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:42:44 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:42:46 | INFO     | [STT-Interceptor] USER (Final): नहीं मुझे यह बताइए कि
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 34
-19:42:46 | INFO     | Pushing data to queue
-19:42:46 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:46,904 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:47 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'नहीं मुझे यह बताइए कि'
-19:42:47 | INFO     | [BargeIn] Injecting context to stale user input: 'नहीं मुझे यह बताइए कि
+20:05:33 | INFO     | [TTS-Interceptor] BOT SAID: Please
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 29
+20:05:33 | INFO     | Pushing data to queue
+20:05:33 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:33,822 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:33 | INFO     | [TTS-Interceptor] BOT SAID:  tell me your V I N so I can help you with the radio code.
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 30
+20:05:33 | INFO     | Pushing data to queue
+20:05:33 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:33,901 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:34 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471734.024
+20:05:34 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:05:34 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:05:35 | INFO     | [STT-Interceptor] USER (Final): क्या तुम मुझे बता सकती हो कि
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 31
+20:05:35 | INFO     | Pushing data to queue
+20:05:35 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:35,080 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:35 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'क्या तुम मुझे बता सकती हो कि'
+20:05:35 | INFO     | [BargeIn] Injecting context to stale user input: 'क्या तुम मुझे बता सकती हो कि
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:42:47 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:42:47 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:42:48 | INFO     | [STT-Interceptor] USER (Final): dealers
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 35
-19:42:48 | INFO     | Pushing data to queue
-19:42:48 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:48,232 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:48 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'dealers'
-19:42:48 | INFO     | [BargeIn] Injecting context to stale user input: 'dealers
+20:05:36 | INFO     | [TTS-Interceptor] BOT SAID: Ji
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 32
+20:05:36 | INFO     | Pushing data to queue
+20:05:36 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:36,376 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:36 | INFO     | [TTS-Interceptor] BOT SAID: , V I N Number yaani Vehicle Identification Number ek unique satrah digit ka alphanumeric
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 33
+20:05:36 | INFO     | Pushing data to queue
+20:05:36 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:36,440 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:36 | INFO     | [TTS-Interceptor] BOT SAID:  number hota hai. Yeh aapko aapki gaadi ke left top engine compartment par ya
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 34
+20:05:36 | INFO     | Pushing data to queue
+20:05:36 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:36,562 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:36 | INFO     | [TTS-Interceptor] BOT SAID:  phir aapke R C card par mil jayega.
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 35
+20:05:36 | INFO     | Pushing data to queue
+20:05:36 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:36,663 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:36 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471736.684
+20:05:37 | INFO     | [STT-Interceptor] USER (Final): जी
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 36
+20:05:37 | INFO     | Pushing data to queue
+20:05:37 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:37,777 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:38 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'जी'
+20:05:38 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:05:38 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:05:39 | INFO     | [TTS-Interceptor] BOT SAID: A
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 37
+20:05:39 | INFO     | Pushing data to queue
+20:05:39 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:39,107 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:39 | INFO     | [TTS-Interceptor] BOT SAID: apko V I N number aapki gaadi ke left top engine compartment par ya phir aap
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 38
+20:05:39 | INFO     | Pushing data to queue
+20:05:39 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:39,213 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:39 | INFO     | [TTS-Interceptor] BOT SAID: ke R C card par mil jayega. Kripya aap apna V I N number bataye
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 39
+20:05:39 | INFO     | Pushing data to queue
+20:05:39 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:39,375 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:39 | INFO     | [TTS-Interceptor] BOT SAID: in.
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 40
+20:05:39 | INFO     | Pushing data to queue
+20:05:39 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:39,411 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:39 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471739.510
+20:05:41 | INFO     | [STT-Interceptor] USER (Final): जी जी मुझे
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 41
+20:05:41 | INFO     | Pushing data to queue
+20:05:41 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:41,792 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:42 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'जी जी मुझे'
+20:05:42 | INFO     | [BargeIn] Injecting context to stale user input: 'जी जी मुझे
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:42:49 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:42:49 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:42:49 | INFO     | [STT-Interceptor] USER (Final): का क्या detail है आपके पास
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 36
-19:42:49 | INFO     | Pushing data to queue
-19:42:49 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:49,965 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:50 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'का क्या detail है आपके पास'
-19:42:50 | INFO     | [BargeIn] Injecting context to stale user input: 'का क्या detail है आपके पास
+20:05:42 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:05:42 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:05:42 | INFO     | [STT-Interceptor] USER (Final): नहीं नहीं
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 42
+20:05:42 | INFO     | Pushing data to queue
+20:05:42 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:42,670 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:43 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'नहीं नहीं'
+20:05:43 | INFO     | [BargeIn] Injecting context to stale user input: 'नहीं नहीं
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:42:51 | INFO     | [ProductExpert] Exiting product expert mode
-19:42:52 | INFO     | [TTS-Interceptor] BOT SAID: A
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 37
-19:42:52 | INFO     | Pushing data to queue
-19:42:52 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:52,158 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:52 | INFO     | [TTS-Interceptor] BOT SAID: ap kis shehar ya area mein dealer ki jaankari chahte hain?
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 38
-19:42:52 | INFO     | Pushing data to queue
-19:42:52 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:42:52,377 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:42:52 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784470372.496
-19:42:57 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:42:57 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:43:00 | INFO     | [STT-Interceptor] USER (Final): i want to know about the exact मायापुरी
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 39
-19:43:00 | INFO     | Pushing data to queue
-19:43:00 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:43:00,039 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:43:00 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'i want to know about the exact मायापुरी'
-19:43:00 | INFO     | [BargeIn] Injecting context to stale user input: 'i want to know about the exact मायापुरी
+20:05:43 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:05:43 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:05:43 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:05:43 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:05:43 | INFO     | [STT-Interceptor] USER (Final): ठीक है ठीक है
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 43
+20:05:43 | INFO     | Pushing data to queue
+20:05:43 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:43,855 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:44 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'ठीक है ठीक है'
+20:05:44 | INFO     | [BargeIn] Injecting context to stale user input: 'ठीक है ठीक है
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:43:01 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:43:01 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:43:01 | INFO     | [STT-Interceptor] USER (Final): area
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 40
-19:43:01 | INFO     | Pushing data to queue
-19:43:01 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:43:01,298 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:43:01 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'area'
-19:43:01 | INFO     | [BargeIn] Injecting context to stale user input: 'area
+20:05:45 | INFO     | [TTS-Interceptor] BOT SAID: The
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 44
+20:05:45 | INFO     | Pushing data to queue
+20:05:45 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:45,333 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:45 | INFO     | [TTS-Interceptor] BOT SAID: ek hai. Kya aapko V I N number mil gaya hai? Kripya mujhe
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 45
+20:05:45 | INFO     | Pushing data to queue
+20:05:45 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:45,454 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:45 | INFO     | [TTS-Interceptor] BOT SAID:  batayein.
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 46
+20:05:45 | INFO     | Pushing data to queue
+20:05:45 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:45,510 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:45 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471745.566
+20:05:47 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:05:47 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:05:47 | INFO     | [STT-Interceptor] USER (Final): ठीक है ok
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 47
+20:05:47 | INFO     | Pushing data to queue
+20:05:47 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:47,733 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:48 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'ठीक है ok'
+20:05:48 | INFO     | [BargeIn] Injecting context to stale user input: 'ठीक है ok
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:43:03 | INFO     | [Dealer] city=mayapuri
-19:43:03 | INFO     | [TTS-Interceptor] BOT SAID: May
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 41
-19:43:03 | INFO     | Pushing data to queue
-19:43:03 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:43:03,720 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:43:03 | INFO     | [TTS-Interceptor] BOT SAID: apuri mein koi service center listed nahi hai. Kya aap Delhi, Gurgaon, Noida
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 42
-19:43:03 | INFO     | Pushing data to queue
-19:43:03 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:43:03,910 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:43:04 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784470384.043
-19:43:04 | INFO     | [TTS-Interceptor] BOT SAID: , Ghaziabad, ya Faridabad mein dealer ki jaankari chahenge
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 43
-19:43:04 | INFO     | Pushing data to queue
-19:43:04 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:43:04,066 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:43:04 | INFO     | [TTS-Interceptor] BOT SAID: ?
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 44
-19:43:04 | INFO     | Pushing data to queue
-19:43:04 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:43:04,114 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:43:16 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:43:16 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:43:17 | INFO     | [STT-Interceptor] USER (Final): ok thank you for the call
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 45
-19:43:17 | INFO     | Pushing data to queue
-19:43:17 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:43:17,215 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:43:17 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'ok thank you for the call'
-19:43:17 | INFO     | [BargeIn] Injecting context to stale user input: 'ok thank you for the call
+20:05:49 | INFO     | [TTS-Interceptor] BOT SAID: Kya
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 48
+20:05:49 | INFO     | Pushing data to queue
+20:05:49 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:49,048 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:49 | INFO     | [TTS-Interceptor] BOT SAID:  aapko V I N number mil gaya hai?
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 49
+20:05:49 | INFO     | Pushing data to queue
+20:05:49 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:49,144 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:49 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471749.277
+20:05:53 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:05:53 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:05:53 | INFO     | [STT-Interceptor] USER (Final): हां
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 50
+20:05:53 | INFO     | Pushing data to queue
+20:05:53 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:53,474 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:53 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'हां'
+20:05:53 | INFO     | [BargeIn] Injecting context to stale user input: 'हां
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:43:18 | INFO     | [TTS-Interceptor] BOT SAID: Kya
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 46
-19:43:18 | INFO     | Pushing data to queue
-19:43:18 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:43:18,602 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:43:18 | INFO     | [TTS-Interceptor] BOT SAID:  main aapki aur koi sahayata kar sakti hoon?
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 47
-19:43:18 | INFO     | Pushing data to queue
-19:43:18 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:43:18,782 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:43:18 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784470398.973
-19:43:22 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
-19:43:22 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
-19:43:22 | INFO     | [STT-Interceptor] USER (Final): नहीं है
-the seq is key seq:93051a2e-b80d-4e4a-96f8-379e9128409b seq 48
-19:43:22 | INFO     | Pushing data to queue
-19:43:22 | INFO     | Pushing data to ActiveMQ queue
-2026-07-19 19:43:22,756 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
-19:43:23 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'नहीं है'
-19:43:23 | INFO     | [BargeIn] Injecting context to stale user input: 'नहीं है
+20:05:54 | INFO     | [TTS-Interceptor] BOT SAID: K
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 51
+20:05:54 | INFO     | Pushing data to queue
+20:05:54 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:54,934 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:55 | INFO     | [TTS-Interceptor] BOT SAID: ripya apna V I N number batayein.
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 52
+20:05:55 | INFO     | Pushing data to queue
+20:05:55 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:05:55,015 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:05:55 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471755.136
+20:06:00 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:06:00 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:06:00 | INFO     | [STT-Interceptor] USER (Final): ok मुझे नहीं
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 53
+20:06:00 | INFO     | Pushing data to queue
+20:06:00 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:06:00,569 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:06:00 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'ok मुझे नहीं'
+20:06:00 | INFO     | [BargeIn] Injecting context to stale user input: 'ok मुझे नहीं
 
 (The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
-19:43:24 | INFO     | LLM requested end_conversation. Reason: not_interested
-19:43:28 | INFO     | [EndCall] Bot finished speaking final goodbye, hanging up now
-19:43:28 | INFO     | [AudioSocket] EndFrame → sending 0x00 hangup signal.
-19:43:28 | INFO     | [Cleanup] Explicitly stopped user and bot transcript logging workers.
-19:43:28 | INFO     | Pipeline finished! Handling Asterisk teardown...
-19:43:28 | INFO     | Normal disconnect. Firing AMI Hangup...
-19:43:30 | INFO     | [AMI] Found channel: Local/+916375929770*93051a2e-b80d-4e4a-96f8-379e9128409b@outbound-dialer-0000000a;1. Sending HARD HANGUP...
-19:43:30 | INFO     | Pipeline ended for 93051a2e-b80d-4e4a-96f8-379e9128409b. Processing audio...
-19:43:30 | INFO     | Temporal stereo recording saved: server_recording_20260719_194044.wav
-19:43:30 | INFO     | Temporal stereo recording reconstructed: server_recording_20260719_194044.wav
-2026-07-19 19:43:30,357 INFO server - webhook response is call_id='93051a2e-b80d-4e4a-96f8-379e9128409b' status='COMPLETED' cause='16' dial_status='UNKNOWN'
-2026-07-19 19:43:30,358 INFO server - No data found for key: 93051a2e-b80d-4e4a-96f8-379e9128409b_hangup_reason
-2026-07-19 19:43:30,358 INFO server - decreased redis permits count for one call
-2026-07-19 19:43:30,359 INFO server - Key '93051a2e-b80d-4e4a-96f8-379e9128409b_extra_keys' deleted successfully.
-2026-07-19 19:43:30,359 INFO server - Key '93051a2e-b80d-4e4a-96f8-379e9128409b_extra_data' deleted successfully.
-2026-07-19 19:43:30,359 INFO server - Key '93051a2e-b80d-4e4a-96f8-379e9128409b_was_answered' deleted successfully.
-Sending the message this------------------------------------------ {'callSid': '93051a2e-b80d-4e4a-96f8-379e9128409b', 'callId': 'call-861e793b-bfb7-438e-9b09-f9e6972a9cf9', 'organisationId': 27, 'departmentId': '', 'campaignId': 37, 'assistantId': '6a3b9f0c6da9b858032c8b7f', 'callStatus': 'COMPLETED', 'reason': 'COMPLETED', 'endedAt': '2026-07-19T14:13:30Z', 'nodes': [], 'workflow_variables': None}
-2026-07-19 19:43:30,359 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.completed
+20:06:01 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:06:01 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:06:01 | INFO     | [STT-Interceptor] USER (Final): जानना
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 54
+20:06:01 | INFO     | Pushing data to queue
+20:06:01 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:06:01,747 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:06:02 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'जानना'
+20:06:02 | INFO     | [BargeIn] Injecting context to stale user input: 'जानना
+
+(The customer said this while you were still speaking. If it is only a short acknowledgement such as 'ok', 'haan', 'hmm', 'yes', 'achha', treat it as agreement and continue naturally. Otherwise, treat it as their new request. Reply in the same language as the customer's words above.)'
+20:06:03 | INFO     | [TTS-Interceptor] BOT SAID: The
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 55
+20:06:03 | INFO     | Pushing data to queue
+20:06:03 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:06:03,244 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:06:03 | INFO     | [TTS-Interceptor] BOT SAID: ek hai. Kya aapko aur kisi cheez mein madad chahiye?
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 56
+20:06:03 | INFO     | Pushing data to queue
+20:06:03 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:06:03,372 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:06:03 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471763.489
+20:06:08 | INFO     | [STT-Interceptor] USER (Final): no
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 57
+20:06:08 | INFO     | Pushing data to queue
+20:06:08 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:06:08,789 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:06:09 | SUCCESS  | ⚡ [SPEED HACK] Forcing LLM trigger for: 'no'
+20:06:09 | WARNING  | [BargeIn] Interruption detected! Flagging next user input.
+20:06:09 | INFO     | [AudioSocket] Interruption detected – discarding queued audio immediately.
+20:06:10 | INFO     | [TTS-Interceptor] BOT SAID: Renault
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 58
+20:06:10 | INFO     | Pushing data to queue
+20:06:10 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:06:10,121 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:06:10 | INFO     | [TTS-Interceptor] BOT SAID:  Care se sampark karne ke liye aapka dhanyavaad. Aapka din sh
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 59
+20:06:10 | INFO     | Pushing data to queue
+20:06:10 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:06:10,186 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:06:10 | WARNING  | [AUDIO-OUT] First chunk on wire: 1784471770.297
+20:06:10 | INFO     | [TTS-Interceptor] BOT SAID: ubh ho.
+the seq is key seq:34110931-3513-4e32-b70f-7b38e7fe9e70 seq 60
+20:06:10 | INFO     | Pushing data to queue
+20:06:10 | INFO     | Pushing data to ActiveMQ queue
+2026-07-19 20:06:10,367 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.transcriptions
+20:06:10 | INFO     | LLM requested end_conversation. Reason: not_interested
+20:06:16 | INFO     | [EndCall] Bot finished speaking final goodbye, hanging up now
+20:06:16 | INFO     | [AudioSocket] EndFrame → sending 0x00 hangup signal.
+20:06:17 | INFO     | [Cleanup] Explicitly stopped user and bot transcript logging workers.
+20:06:17 | INFO     | Pipeline finished! Handling Asterisk teardown...
+20:06:17 | INFO     | Normal disconnect. Firing AMI Hangup...
+2026-07-19 20:06:18,477 INFO server - webhook response is call_id='34110931-3513-4e32-b70f-7b38e7fe9e70' status='COMPLETED' cause='16' dial_status='ANSWER'
+2026-07-19 20:06:18,477 INFO server - No data found for key: 34110931-3513-4e32-b70f-7b38e7fe9e70_hangup_reason
+2026-07-19 20:06:18,478 INFO server - decreased redis permits count for one call
+2026-07-19 20:06:18,478 INFO server - Key '34110931-3513-4e32-b70f-7b38e7fe9e70_extra_keys' deleted successfully.
+2026-07-19 20:06:18,478 INFO server - Key '34110931-3513-4e32-b70f-7b38e7fe9e70_extra_data' deleted successfully.
+2026-07-19 20:06:18,478 INFO server - Key '34110931-3513-4e32-b70f-7b38e7fe9e70_was_answered' deleted successfully.
+Sending the message this------------------------------------------ {'callSid': '34110931-3513-4e32-b70f-7b38e7fe9e70', 'callId': 'call-861e793b-bfb7-438e-9b09-f9e6972a9cf9', 'organisationId': 27, 'departmentId': '', 'campaignId': 37, 'assistantId': '6a3b9f0c6da9b858032c8b7f', 'callStatus': 'COMPLETED', 'reason': 'COMPLETED', 'endedAt': '2026-07-19T14:36:18Z', 'nodes': [], 'workflow_variables': None}
+2026-07-19 20:06:18,479 INFO server - Message sent to ActiveMQ (delay_ms=0) to q.call.completed
 sending the event COMPLETED
-INFO:     127.0.0.1:43226 - "POST /webhook/status HTTP/1.1" 200 OK
-2026-07-19 19:43:30,362 INFO server - webhook response is call_id='93051a2e-b80d-4e4a-96f8-379e9128409b' status='COMPLETED' cause='16' dial_status='ANSWER'
-2026-07-19 19:43:30,363 INFO server - No data found for key: 93051a2e-b80d-4e4a-96f8-379e9128409b_extra_data
-2026-07-19 19:43:30,363 ERROR server - No extra_data found for call_id 93051a2e-b80d-4e4a-96f8-379e9128409b
-INFO:     127.0.0.1:43242 - "POST /webhook/status HTTP/1.1" 200 OK
-2026-07-19 19:43:31,450 INFO httpx - HTTP Request: POST https://api-bot.odioiq.com/webhook/logcall "HTTP/1.1 200 "
-19:43:31 | INFO     | Uploaded server_recording_20260719_194044.wav to S3 bucket odio-bot as phoneAi/27/server_recording_20260719_194044.wav
-19:43:31 | INFO     | Deleted local recording file: server_recording_20260719_194044.wav
-19:43:31 | INFO     | final request to odio bot service with recording: {'callId': 'call-861e793b-bfb7-438e-9b09-f9e6972a9cf9', 'status': 'COMPLETED', 'recordingUrl': 'phoneAi/27/server_recording_20260719_194044.wav', 'isRecording': True}
+INFO:     127.0.0.1:52292 - "POST /webhook/status HTTP/1.1" 200 OK
+2026-07-19 20:06:18,487 INFO server - webhook response is call_id='34110931-3513-4e32-b70f-7b38e7fe9e70' status='COMPLETED' cause='0' dial_status='UNKNOWN'
+2026-07-19 20:06:18,487 INFO server - No data found for key: 34110931-3513-4e32-b70f-7b38e7fe9e70_was_answered
+2026-07-19 20:06:18,487 INFO server - No data found for key: 34110931-3513-4e32-b70f-7b38e7fe9e70_extra_data
+2026-07-19 20:06:18,487 ERROR server - No extra_data found for call_id 34110931-3513-4e32-b70f-7b38e7fe9e70
+INFO:     127.0.0.1:52298 - "POST /webhook/status HTTP/1.1" 200 OK
+20:06:19 | INFO     | [AMI] Found channel: Local/+916375929770*34110931-3513-4e32-b70f-7b38e7fe9e70@outbound-dialer-0000000c;1. Sending HARD HANGUP...
+20:06:19 | INFO     | Pipeline ended for 34110931-3513-4e32-b70f-7b38e7fe9e70. Processing audio...
+20:06:19 | INFO     | Temporal stereo recording saved: server_recording_20260719_200400.wav
+20:06:19 | INFO     | Temporal stereo recording reconstructed: server_recording_20260719_200400.wav
+2026-07-19 20:06:19,543 INFO httpx - HTTP Request: POST https://api-bot.odioiq.com/webhook/logcall "HTTP/1.1 200 "
+20:06:20 | INFO     | Uploaded server_recording_20260719_200400.wav to S3 bucket odio-bot as phoneAi/27/server_recording_20260719_200400.wav
+20:06:20 | INFO     | Deleted local recording file: server_recording_20260719_200400.wav
+20:06:20 | INFO     | final request to odio bot service with recording: {'callId': 'call-861e793b-bfb7-438e-9b09-f9e6972a9cf9', 'status': 'COMPLETED', 'recordingUrl': 'phoneAi/27/server_recording_20260719_200400.wav', 'isRecording': True}
 sending the event COMPLETED
-2026-07-19 19:43:32,428 INFO httpx - HTTP Request: POST https://api-bot.odioiq.com/webhook/logcall "HTTP/1.1 200 "
+2026-07-19 20:06:20,568 INFO httpx - HTTP Request: POST https://api-bot.odioiq.com/webhook/logcall "HTTP/1.1 200 "
