@@ -1,0 +1,507 @@
+Since you're already using:
+
+* **STT:** Deepgram
+* **LLM:** Gemini 2.5 Flash
+* **TTS:** ElevenLabs
+
+I **would not use LangChain** for a real-time voicebot.
+
+LangChain adds abstraction but doesn't solve your problems (latency, interruption, state management). In fact, it often adds 100–300 ms of overhead and makes debugging harder.
+
+## I would build it like this
+
+```text
+                  Deepgram Streaming STT
+                           │
+                           ▼
+                Conversation State Manager
+                           │
+                (Current Intent, Language,
+                 Active Worker, Memory)
+                           │
+                 ┌─────────┴─────────┐
+                 │                   │
+        Intent Classifier      Active Worker
+         (Gemini Flash)        (Gemini Flash)
+                 │                   │
+                 └─────────┬─────────┘
+                           ▼
+                    Tool Executor
+                           │
+                           ▼
+                  Gemini Response
+                           │
+                           ▼
+                 ElevenLabs Streaming TTS
+```
+
+Notice that **Gemini does two jobs**:
+
+1. Intent classification (very small prompt, ~20–30 tokens output)
+2. Conversation generation
+
+This is much faster than giving one huge prompt every turn.
+
+---
+
+# Step 1 – Session State
+
+Create a session object.
+
+```python
+from dataclasses import dataclass, field
+
+@dataclass
+class SessionState:
+
+    language = "HINGLISH"
+
+    active_worker = None
+
+    intent = None
+
+    customer_name = None
+
+    vehicle = None
+
+    vin = None
+
+    city = None
+
+    registration = None
+
+    pending_answer = None
+
+    conversation_summary = ""
+
+    tool_context = {}
+
+    last_response = ""
+```
+
+Never ask the LLM to remember these.
+
+---
+
+# Step 2 – Intent Classifier
+
+The classifier prompt should be tiny.
+
+```python
+INTENT_PROMPT = """
+You are an intent classifier.
+
+Return JSON only.
+
+Possible intents:
+
+ROADSIDE
+FINANCE
+RADIO
+DEALER
+PRODUCT
+SMALL_TALK
+CLOSING
+UNKNOWN
+
+Output format:
+
+{
+  "intent":"PRODUCT",
+  "confidence":0.96
+}
+
+Customer:
+
+{message}
+"""
+```
+
+Gemini Flash is extremely good at this.
+
+---
+
+Example
+
+Customer
+
+> My radio is asking for code.
+
+Returns
+
+```json
+{
+ "intent":"RADIO",
+ "confidence":0.99
+}
+```
+
+Another example
+
+> My car isn't starting.
+
+Returns
+
+```json
+{
+ "intent":"ROADSIDE",
+ "confidence":0.98
+}
+```
+
+This call is usually under 100 tokens.
+
+---
+
+# Step 3 – Worker Selection
+
+```python
+WORKERS = {
+
+    "ROADSIDE": RoadsideWorker(),
+
+    "PRODUCT": ProductWorker(),
+
+    "RADIO": RadioWorker(),
+
+    "FINANCE": FinanceWorker(),
+
+    "DEALER": DealerWorker()
+}
+```
+
+Then
+
+```python
+worker = WORKERS[intent]
+
+reply = worker.respond(
+    session=session,
+    user_message=user_text
+)
+```
+
+---
+
+# Step 4 – Each Worker has its own Prompt
+
+Instead of
+
+500 lines
+
+make Product Worker only about product.
+
+Example
+
+```python
+SYSTEM_PROMPT = """
+
+You are Renault Product Specialist.
+
+Answer only product questions.
+
+Use brochure tool.
+
+Never discuss finance.
+
+Never discuss roadside.
+
+Never invent specifications.
+
+Maximum three sentences.
+"""
+```
+
+This prompt becomes around 50 lines.
+
+Huge latency reduction.
+
+---
+
+# Step 5 – Function Calling
+
+Gemini function calling is enough.
+
+No LangChain needed.
+
+Example
+
+```python
+tools = [
+
+    get_dealer,
+
+    get_product_specs,
+
+    get_radio_code,
+
+    create_roadside_ticket
+]
+```
+
+Gemini decides
+
+↓
+
+Call tool
+
+↓
+
+Tool executes
+
+↓
+
+Gemini receives response
+
+↓
+
+Reply.
+
+Exactly what LangChain would do.
+
+---
+
+# Example
+
+Customer
+
+> Where is nearest dealer?
+
+Gemini
+
+```python
+tool_call = {
+
+    "tool":"dealer_lookup",
+
+    "city":"Gurgaon"
+}
+```
+
+Python
+
+```python
+dealer = dealer_lookup("Gurgaon")
+```
+
+Gemini receives
+
+```python
+{
+"name":"Renault Gurgaon",
+
+"phone":"9876543210"
+}
+```
+
+Gemini answers naturally.
+
+---
+
+# Step 6 – Interruption Handling
+
+Suppose
+
+Bot
+
+> The nearest dealer is...
+
+Customer interrupts.
+
+Don't ask Gemini to remember.
+
+Instead
+
+```python
+session.pending_answer = remaining_text
+```
+
+Later
+
+Customer
+
+> Continue.
+
+Your code
+
+```python
+if user_text.lower() == "continue":
+
+    speak(session.pending_answer)
+```
+
+No LLM required.
+
+Latency = almost zero.
+
+---
+
+# Step 7 – Language Detection
+
+Don't use Gemini.
+
+Deepgram already provides language hints and confidence in many configurations, and for your use case a lightweight rule-based detector is sufficient.
+
+Example
+
+```python
+ENGLISH = {
+
+    "price",
+
+    "engine",
+
+    "dealer",
+
+    "service",
+
+    "insurance",
+
+    "finance",
+
+    "hello"
+}
+
+HINDI = {
+
+    "gaadi",
+
+    "haan",
+
+    "nahi",
+
+    "mera",
+
+    "meri",
+
+    "kahan",
+
+    "kaise",
+
+    "kya",
+
+    "chahiye"
+}
+```
+
+Combined with conversation state.
+
+If score difference is small
+
+↓
+
+Don't switch.
+
+Only switch when confidence is high.
+
+---
+
+# Step 8 – Conversation Memory
+
+Never send the full conversation.
+
+Instead
+
+```python
+memory = f"""
+
+Language : {session.language}
+
+Vehicle : {session.vehicle}
+
+City : {session.city}
+
+VIN : {session.vin}
+
+Worker : {session.active_worker}
+
+"""
+```
+
+Inject only this.
+
+Token savings are huge.
+
+---
+
+# Putting It Together
+
+```python
+text = deepgram.transcribe(audio)
+
+intent = classify_intent(text)
+
+worker = workers[intent]
+
+tool_result = worker.run_tools(text)
+
+reply = worker.generate_reply(
+
+    text,
+
+    tool_result,
+
+    session
+
+)
+
+elevenlabs.speak(reply)
+```
+
+That's all.
+
+---
+
+# Can Gemini do multiple tasks in one call?
+
+Yes, technically you can ask Gemini to:
+
+* detect language
+* classify intent
+* decide worker
+* call a function
+* generate the reply
+
+in **one API call** using function calling.
+
+However, for a production voicebot, I recommend splitting responsibilities:
+
+1. **Intent & routing** (fast, deterministic, JSON output).
+2. **Worker execution + tool calling + response generation** (natural language).
+
+This keeps prompts small, makes debugging much easier, and lets you cache or optimize each stage independently.
+
+## My recommended stack for ODIO
+
+```text
+Deepgram Streaming STT
+        │
+        ▼
+Endpoint Detection (end of utterance)
+        │
+        ▼
+Intent Classifier (Gemini Flash, JSON only)
+        │
+        ▼
+Conversation State Manager (Python)
+        │
+        ▼
+Worker Prompt (Roadside/Product/Finance/etc.)
+        │
+        ▼
+Gemini Function Calling
+        │
+        ▼
+Business Tools (Dealer, Radio, Finance, Product)
+        │
+        ▼
+Gemini Final Response
+        │
+        ▼
+Semantic Sentence Buffer
+        │
+        ▼
+ElevenLabs Streaming TTS
+```
+
+For a system like Renault Care, this architecture will generally be more maintainable and lower-latency than using LangChain, while taking full advantage of Gemini Flash's native function-calling capabilities.
